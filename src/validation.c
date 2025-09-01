@@ -1624,7 +1624,7 @@ lyd_validate_obsolete(const struct lyd_node *node)
         if (snode->flags & LYS_STATUS_OBSLT &&
                 (!(snode->nodetype & LYD_NODE_INNER) || lyd_child(node))) {
             LOG_LOCSET(NULL, node);
-            LOGWRN(snode->module->ctx, "Obsolete schema node \"%s\" instantiated in data.", snode->name);
+            LOGDBG(LY_LDGSCHEMA, "%s: obsolete schema node \"%s\" instantiated in data.", snode->module->name, snode->name);
             LOG_LOCBACK(0, 1);
             break;
         }

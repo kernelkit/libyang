@@ -705,6 +705,9 @@ ly_log_dbg(uint32_t group, const char *format, ...)
     case LY_LDGDEPSETS:
         str_group = "DEPSETS";
         break;
+    case LY_LDGSCHEMA:
+        str_group = "SCHEMA";
+        break;
     default:
         LOGINT(NULL);
         return;
